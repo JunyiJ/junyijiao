@@ -11,7 +11,7 @@ This is a static site optimized for easy AI-agent editing and GitHub Pages deplo
 
 ## Deploy to GitHub Pages
 
-1. Create a new GitHub repo (for example: `junyijiao.com-site`)
+1. Create a new GitHub repo (for example: `junyijiao`)
 2. Upload these files to the repo root
 3. In GitHub: **Settings → Pages**
    - Source: `Deploy from a branch`
