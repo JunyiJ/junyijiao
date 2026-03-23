@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junyi Jiao — Software Engineer</title>
+    <meta
+      name="description"
+      content="Junyi Jiao is a Software Engineer at Google, focused on machine learning systems for recommendations, discovery, and ads targeting."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">Junyi Jiao</a>
+        <nav>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="/resume/">Resume</a>
+          <a class="btn btn-small" href="mailto:jiaojunyi90@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <p class="eyebrow">Software Engineer · Mountain View, CA</p>
+        <h1>Building machine learning systems that improve discovery at scale.</h1>
+        <p class="lead">
+          I’m a Software Engineer at Google working on YouTube Shorts Discovery and
+          recommendation systems. My work spans cold-start exploration, retrieval/ranking,
+          local discovery, and ML infrastructure.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="/resume/">View Resume</a>
+          <a class="btn btn-outline" href="/assets/resume/Junyi_Jiao_Resume.pdf">Download PDF</a>
+        </div>
+      </section>
+
+      <section class="container section" id="experience">
+        <h2>Selected Experience</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Google, LLC — Software Engineer (YouTube Shorts Discovery)</h3>
+            <p class="meta">Nov 2021 – Present · Mountain View, CA</p>
+            <ul>
+              <li>
+                Tech lead for Shorts exploration initiatives; led a group of ~10 engineers on
+                cold-start audience discovery for newly uploaded videos.
+              </li>
+              <li>
+                Shipped retrieval strategies using two-tower models + ANN and video-understanding
+                signals to improve early audience matching.
+              </li>
+              <li>
+                Built lift models to prioritize exploration and introduced uncertainty modeling to
+                improve ranking quality on cold-start items.
+              </li>
+              <li>
+                Initiated and led local Shorts discovery as a distinct sub-ecosystem, introducing
+                location signals across retrieval and ranking and launching place-pivot experiences.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Google, LLC — Software Engineer, TL (Display Ads Audience Targeting)</h3>
+            <p class="meta">Mar 2019 – Nov 2021 · Mountain View, CA</p>
+            <ul>
+              <li>
+                Built and improved ML infrastructure for model training, serving, and application in
+                ads audience targeting.
+              </li>
+              <li>
+                Led launches to improve targeting quality, signal coverage, and serving efficiency;
+                contributed to $150M+ ARR impact.
+              </li>
+              <li>
+                Built simulation/evaluation infrastructure for post-third-party-cookie audience
+                clustering analysis (FLoC and follow-on explorations).
+              </li>
+              <li>Awards: AViDly Awards, 6 peer bonuses, 4 spot bonuses.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Bloomberg L.P. — Software Engineer (BQNT Framework)</h3>
+            <p class="meta">2018 – 2019 · San Francisco, CA</p>
+            <ul>
+              <li>Built a Kafka-based data pipeline for customer data collection/storage.</li>
+              <li>Implemented automated versioned release frameworks.</li>
+              <li>Built automated test/release workflow with Kubernetes and GoCD.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="education">
+        <h2>Education</h2>
+        <div class="edu-list">
+          <div>
+            <h3>Georgia Institute of Technology</h3>
+            <p>M.S., Computer Science (Machine Learning track), 2018 – 2021 (Online)</p>
+          </div>
+          <div>
+            <h3>Yale University</h3>
+            <p>Ph.D., Biophysics / Cell Biology, 2012 – 2018 · New Haven, CT</p>
+          </div>
+          <div>
+            <h3>Peking University</h3>
+            <p>B.S., Life Sciences, 2008 – 2012 · Beijing, China</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section" id="projects">
+        <h2>Selected Technical Projects</h2>
+        <p class="lead">A few current implementation-focused projects. Full list and details are on the resume page.</p>
+        <div class="cards">
+          <article class="card">
+            <h3><a href="https://github.com/JunyiJ/Practical-Decoder" target="_blank" rel="noopener noreferrer">Practical-Decoder</a></h3>
+            <p class="meta">Python · updated March 2026</p>
+            <p>Decoder-style transformer implementation and architecture experiments.</p>
+          </article>
+
+          <article class="card">
+            <h3><a href="https://github.com/JunyiJ/Practical-DiT" target="_blank" rel="noopener noreferrer">Practical-DiT</a></h3>
+            <p class="meta">Python · updated March 2026</p>
+            <p>Diffusion Transformer implementation practice and systems exploration.</p>
+          </article>
+        </div>
+        <p><a href="/resume/">See full project list on resume →</a></p>
+      </section>
+
+      <section class="container section" id="publications">
+        <h2>Selected Publications</h2>
+        <ul class="pub-list">
+          <li>Munc18-1 and Vps33 catalyze SNARE assembly by templating SNARE folding and association. <em>eLife</em>, 2018.</li>
+          <li>Kinetically coupled folding of a single HIV-1 glycoprotein 41 complex in viral membrane fusion and inhibition. <em>PNAS</em>, 2015.</li>
+          <li>Single-molecule force spectroscopy of protein-membrane interactions. <em>eLife</em>, 2017.</li>
+          <li>Stability, folding dynamics, and long-range conformational transition of the synaptic t-SNARE complex. <em>PNAS</em>, 2016.</li>
+          <li>Hidden Markov modeling with detailed balance and its application to single protein folding. <em>Biophysical Journal</em>, 2016.</li>
+        </ul>
+        <p>
+          <a href="/resume/">See full resume for complete publication and presentation list →</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Junyi Jiao</p>
+        <p><a href="mailto:jiaojunyi90@gmail.com">jiaojunyi90@gmail.com</a></p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
