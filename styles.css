@@ -28,6 +28,10 @@ body {
   margin: 0 auto;
 }
 
+.lead {
+  max-width: 72ch;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -147,6 +151,7 @@ h1 {
 }
 
 .icon-link svg { display: block; }
+.icon-link span { font-size: 1rem; letter-spacing: 0.01em; }
 
 .icon-github {
   background: #181717;
@@ -164,9 +169,9 @@ h1 {
   filter: brightness(1.06);
 }
 
-.section { padding: 30px 0; }
+.section { padding: 34px 0; }
 .section h2 {
-  margin: 0 0 .95rem;
+  margin: 0 0 1.05rem;
   font-size: 1.42rem;
   letter-spacing: -0.015em;
 }
@@ -184,7 +189,7 @@ h1 {
   background: linear-gradient(180deg, var(--surface) 0%, var(--surface-soft) 100%);
   border: 1px solid var(--border);
   border-radius: 1rem;
-  padding: 1.05rem 1.12rem;
+  padding: 1.15rem 1.2rem;
   box-shadow: var(--shadow-sm);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
@@ -207,8 +212,12 @@ h1 {
   font-size: .92rem;
 }
 
+p, li {
+  font-size: 1rem;
+}
+
 ul { padding-left: 1.1rem; margin: 0; }
-li + li { margin-top: .35rem; }
+li + li { margin-top: .4rem; }
 
 .timeline {
   display: grid;
