@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Set Up OpenClaw Safely — Junyi Jiao</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="../">Junyi Jiao</a>
+        <nav><a href="./">Writing</a><a href="../">Home</a></nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h1>How to Set Up OpenClaw Safely</h1>
+      <p class="lead">A practical baseline for running OpenClaw in a safer way.</p>
+
+      <div class="card">
+        <h3>1) Start with least privilege</h3>
+        <ul>
+          <li>Run OpenClaw as a non-root user.</li>
+          <li>Grant only the minimum tool access needed for your workflows.</li>
+          <li>Avoid broad filesystem permissions; scope workspace paths tightly.</li>
+        </ul>
+
+        <h3>2) Lock down network exposure</h3>
+        <ul>
+          <li>Do not expose admin/gateway endpoints publicly without authentication and IP restrictions.</li>
+          <li>Use firewall defaults-deny and allow only required ports.</li>
+          <li>Prefer reverse proxy + TLS for any external access.</li>
+        </ul>
+
+        <h3>3) Protect credentials and tokens</h3>
+        <ul>
+          <li>Store secrets in environment variables or a secret manager, never in repo files.</li>
+          <li>Rotate tokens periodically and immediately after suspected leaks.</li>
+          <li>Use separate credentials for dev/staging/prod.</li>
+        </ul>
+
+        <h3>4) Keep change control and audit trails</h3>
+        <ul>
+          <li>Use version control for prompt/config/skill changes.</li>
+          <li>Require explicit approvals for destructive actions.</li>
+          <li>Log key operations and keep a rollback path.</li>
+        </ul>
+
+        <h3>5) Keep software updated</h3>
+        <ul>
+          <li>Patch base OS and dependencies on a fixed cadence.</li>
+          <li>Run periodic security health checks.</li>
+          <li>Back up critical configs before upgrades.</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
