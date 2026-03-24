@@ -135,18 +135,33 @@ h1 {
 .icon-link {
   display: inline-flex;
   align-items: center;
-  gap: .45rem;
-  padding: .5rem .72rem;
-  border: 1px solid var(--border);
-  border-radius: .7rem;
-  color: #cfe0ff;
+  gap: .52rem;
+  padding: .62rem .9rem;
+  border: 1px solid transparent;
+  border-radius: .78rem;
+  color: #ffffff;
   text-decoration: none;
-  background: #121a33;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.34);
+  transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+}
+
+.icon-link svg { display: block; }
+
+.icon-github {
+  background: #181717;
+  border-color: #2f2f30;
+}
+
+.icon-linkedin {
+  background: #0a66c2;
+  border-color: #0a66c2;
 }
 
 .icon-link:hover {
-  background: #1a274d;
-  color: #e6efff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2, 6, 23, 0.42);
+  filter: brightness(1.06);
 }
 
 .section { padding: 30px 0; }
