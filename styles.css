@@ -1,12 +1,39 @@
 :root {
+  --bg: #f6f8fc;
+  --bg-spot-1: #dbeafe;
+  --bg-spot-2: #e0e7ff;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --primary-text: #ffffff;
+  --border: #dbe4f0;
+  --link: #1d4ed8;
+  --link-hover: #1e40af;
+  --eyebrow: #1e40af;
+  --header-bg: rgba(246, 248, 252, 0.88);
+  --timeline-line: #bfd0ea;
+  --shadow-sm: 0 10px 22px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 18px 42px rgba(15, 23, 42, 0.14);
+}
+
+[data-theme="dark"] {
   --bg: #0b1020;
+  --bg-spot-1: #1d2c60;
+  --bg-spot-2: #18264e;
   --surface: #111831;
   --surface-soft: #151f3d;
   --text: #e6ebff;
   --muted: #a4b1d4;
   --primary: #5ea0ff;
-  --primary-dark: #3b82f6;
+  --primary-text: #061126;
   --border: #253156;
+  --link: #9bc0ff;
+  --link-hover: #bfdbfe;
+  --eyebrow: #9bc0ff;
+  --header-bg: rgba(11, 16, 32, 0.88);
+  --timeline-line: #2e3f73;
   --shadow-sm: 0 10px 22px rgba(2, 6, 23, 0.35);
   --shadow-md: 0 18px 42px rgba(2, 6, 23, 0.48);
 }
@@ -17,8 +44,8 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 460px at 20% -10%, #1d2c60 0%, transparent 58%),
-    radial-gradient(900px 360px at 90% -15%, #18264e 0%, transparent 58%),
+    radial-gradient(1200px 460px at 20% -10%, var(--bg-spot-1) 0%, transparent 58%),
+    radial-gradient(900px 360px at 90% -15%, var(--bg-spot-2) 0%, transparent 58%),
     var(--bg);
   line-height: 1.62;
 }
@@ -36,7 +63,7 @@ body {
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
-  background: color-mix(in srgb, #0b1020 88%, transparent);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border);
   z-index: 30;
 }
@@ -72,6 +99,16 @@ nav a {
 
 nav a:hover { color: var(--text); }
 
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: .65rem;
+  padding: .35rem .62rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .hero { padding: 88px 0 36px; }
 
 .eyebrow {
@@ -79,7 +116,7 @@ nav a:hover { color: var(--text); }
   text-transform: uppercase;
   letter-spacing: .08em;
   font-size: .78rem;
-  color: #9bc0ff;
+  color: var(--eyebrow);
   font-weight: 700;
 }
 
@@ -108,7 +145,7 @@ h1 {
 .btn {
   display: inline-block;
   background: var(--primary);
-  color: #061126;
+  color: var(--primary-text);
   padding: .66rem .95rem;
   border-radius: .74rem;
   text-decoration: none;
@@ -118,20 +155,19 @@ h1 {
 }
 
 .btn:hover {
-  background: #7ab3ff;
   transform: translateY(-1px);
-  box-shadow: 0 12px 22px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 12px 22px color-mix(in srgb, var(--primary) 35%, transparent);
 }
 
 .btn-outline {
   background: transparent;
-  color: #b7cdff;
-  border-color: #3a4f85;
+  color: var(--link);
+  border-color: var(--border);
 }
 
 .btn-outline:hover {
-  background: #16254a;
-  color: #d3e2ff;
+  background: color-mix(in srgb, var(--surface) 85%, var(--primary) 15%);
+  color: var(--text);
 }
 
 .btn-small { padding: .42rem .78rem; border-radius: .65rem; }
@@ -197,7 +233,7 @@ h1 {
 .card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: #38508f;
+  border-color: color-mix(in srgb, var(--border) 60%, var(--primary) 40%);
 }
 
 .card h3 {
@@ -232,7 +268,7 @@ li + li { margin-top: .4rem; }
   top: .3rem;
   bottom: .3rem;
   width: 2px;
-  background: #2e3f73;
+  background: var(--timeline-line);
 }
 
 .timeline-item {
@@ -254,8 +290,8 @@ li + li { margin-top: .4rem; }
 .edu-list h3 { margin: 0 0 .25rem; }
 .edu-list p { margin: 0; color: var(--muted); }
 
-a { color: #9bc0ff; }
-a:hover { color: #bfdbfe; }
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
 
 .site-footer {
   border-top: 1px solid var(--border);
@@ -292,7 +328,8 @@ a:hover { color: #bfdbfe; }
     width: 100%;
   }
 
-  nav a {
+  nav a,
+  .theme-toggle {
     display: inline-flex;
     align-items: center;
     min-height: 36px;
