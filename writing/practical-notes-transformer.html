@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical Notes on Transformer Implementation — Junyi Jiao</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="../">Junyi Jiao</a>
+        <nav><a href="../#writing">Writing</a><a href="../">Home</a></nav>
+      </div>
+    </header>
+    <main class="container section">
+      <h1>Practical Notes on Transformer Implementation</h1>
+      <p class="lead">A short technical note on building decoder-style transformers from scratch.</p>
+      <div class="card">
+        <ul>
+          <li>Start with a minimal decoder block and make architecture changes one variable at a time.</li>
+          <li>Keep training/evaluation scripts simple and reproducible; add ablations after baseline stability.</li>
+          <li>Track not only loss but generation quality and failure modes under long-context prompts.</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
