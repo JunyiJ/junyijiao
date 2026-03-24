@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Junyi Jiao — Software Engineer</title>
+    <title>Junyi Jiao — Machine Learning Engineer</title>
     <meta
       name="description"
-      content="Junyi Jiao is a Software Engineer at Google, focused on machine learning systems for recommendations, discovery, and ads targeting."
+      content="Junyi Jiao is a Machine Learning Engineer at Google, focused on large-scale recommendation, retrieval/ranking, and GenAI systems."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,88 +19,105 @@
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="./">Junyi Jiao</a>
+        <a class="brand" href="#about">Junyi Jiao</a>
         <nav>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
+          <a href="#about">About</a>
           <a href="#projects">Projects</a>
-          <a href="#blogs">Tech Blogs</a>
-          <a href="./resume/">Resume</a>
-          <a class="btn btn-small" href="mailto:jiaojunyi90@gmail.com">Contact</a>
+          <a href="#experience">Experience</a>
+          <a href="#resume">Resume</a>
+          <a href="#writing">Writing</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero container">
-        <p class="eyebrow">Software Engineer · Mountain View, CA</p>
-        <h1>Building machine learning systems that improve discovery at scale.</h1>
+      <section class="hero container" id="about">
+        <p class="eyebrow">Machine Learning Engineer · Mountain View, CA</p>
+        <h1>Building large-scale recommendation and discovery systems for YouTube.</h1>
         <p class="lead">
           I’m a Machine Learning Engineer at Google working on YouTube Shorts Discovery.
-          My work spans cold-start exploration, retrieval/ranking, multimodal embeddings,
-          local discovery, and ML infrastructure.
+          I build retrieval/ranking and cold-start systems, and implement practical GenAI
+          workflows across post-training, decoding, and multimodal embeddings.
         </p>
-        <div class="chips" aria-label="focus areas">
-          <span class="chip">GenAI</span>
-          <span class="chip">Retrieval & Ranking</span>
-          <span class="chip">LLM Post-Training</span>
-          <span class="chip">Distributed ML Systems</span>
-        </div>
         <div class="hero-actions">
-          <a class="btn" href="./resume/">View Resume</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="./resume/">View Résumé</a>
           <a class="btn btn-outline" href="./assets/resume/Junyi_Jiao_Resume.pdf">Download PDF</a>
         </div>
       </section>
 
-      <section class="container section" id="experience">
-        <h2>Selected Experience</h2>
+      <section class="container section" id="focus">
+        <h2>What I Work On</h2>
         <div class="cards">
           <article class="card">
+            <ul>
+              <li>Large-scale retrieval & ranking for content discovery</li>
+              <li>Cold-start exploration for recommender systems</li>
+              <li>LLM post-training (GRPO / PPO / DPO), practical workflows</li>
+              <li>Multimodal embeddings and local discovery</li>
+              <li>Distributed ML systems and ML infrastructure</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="container section" id="projects">
+        <h2>Highlighted Projects</h2>
+        <div class="cards project-grid">
+          <article class="card">
+            <h3><a href="https://github.com/JunyiJ/Practical-Decoder" target="_blank" rel="noopener noreferrer">Practical-Decoder</a></h3>
+            <p class="meta">Python · Transformer architecture</p>
+            <p>Built a decoder-only GPT model from scratch and experimented with attention mechanisms and MoE structures.</p>
+          </article>
+          <article class="card">
+            <h3><a href="https://github.com/JunyiJ/Practical-DiT" target="_blank" rel="noopener noreferrer">Practical-DiT</a></h3>
+            <p class="meta">Python · Diffusion Transformer / DDPM</p>
+            <p>Implemented DiT end-to-end with training, sampling, and checkpoint-based evaluation workflows.</p>
+          </article>
+          <article class="card">
+            <h3><a href="https://github.com/JunyiJ/PostTraining-LLM-Small" target="_blank" rel="noopener noreferrer">PostTraining-LLM-Small</a></h3>
+            <p class="meta">Python · LLM post-training</p>
+            <p>Implemented practical post-training pipeline on Gemma 2B using GRPO + LoRA and PPO/DPO experiments.</p>
+          </article>
+        </div>
+        <p><a href="./resume/">See full resume details →</a></p>
+      </section>
+
+      <section class="container section" id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <article class="card timeline-item">
             <h3>Google, LLC — Staff Software Engineer, TLM (YouTube Shorts Discovery)</h3>
             <p class="meta">May 2023 – Present · Mountain View, CA</p>
             <ul>
-              <li>
-                Lead Shorts cold-start exploration as TLM for ~23 engineers, building ML strategies
-                to identify initial audiences for newly uploaded videos and expand recommendable corpus.
-              </li>
-              <li>
-                Delivered retrieval improvements for cold start, uplift modeling for traffic optimization,
-                and uncertainty-aware ranking.
-              </li>
-              <li>
-                Led large-model multimodal embedding initiatives for content understanding and
-                recommendation quality.
-              </li>
+              <li>Tech lead manager for ~23 engineers on Shorts cold-start exploration and discovery.</li>
+              <li>Delivered cold-start retrieval improvements, uplift modeling, and uncertainty-aware ranking.</li>
+              <li>Led multimodal embedding initiatives for content understanding and recommendation quality.</li>
             </ul>
           </article>
-
-          <article class="card">
+          <article class="card timeline-item">
+            <h3>Google, LLC — Senior Software Engineer (YouTube Shorts Discovery)</h3>
+            <p class="meta">Nov 2021 – Sep 2023 · Mountain View, CA</p>
+            <ul>
+              <li>Initiated and led local Shorts discovery to build place-based discovery experiences from scratch.</li>
+            </ul>
+          </article>
+          <article class="card timeline-item">
             <h3>Google, LLC — Software Engineer, TL (Display Ads Audience Targeting)</h3>
             <p class="meta">Mar 2019 – Nov 2021 · Mountain View, CA</p>
             <ul>
-              <li>
-                Built and scaled ML infrastructure across training, serving, and model application
-                for audience targeting.
-              </li>
-              <li>
-                Led quality and serving-efficiency launches that improved advertiser ROI and
-                contributed $150M+ ARR.
-              </li>
-              <li>
-                Built privacy-era targeting simulation/evaluation infrastructure (post third-party-cookie),
-                including clustering and feature-space experimentation.
-              </li>
-              <li>Recognition: AViDly Award.</li>
+              <li>Built and scaled ML infrastructure across training, serving, and model application.</li>
+              <li>Led quality and efficiency launches that improved advertiser ROI and contributed $150M+ ARR.</li>
+              <li>Built privacy-era targeting simulation/evaluation systems (post third-party-cookie).</li>
             </ul>
           </article>
-
-          <article class="card">
-            <h3>Bloomberg L.P. — Software Engineer (BQNT Framework)</h3>
+          <article class="card timeline-item">
+            <h3>Bloomberg L.P. — Software Engineer</h3>
             <p class="meta">2018 – 2019 · San Francisco, CA</p>
             <ul>
-              <li>Built a Kafka-based data pipeline for customer data collection/storage.</li>
-              <li>Implemented automated versioned release frameworks.</li>
-              <li>Built automated test/release workflow with Kubernetes and GoCD.</li>
+              <li>Built Kafka-based data pipelines for customer/quant workflows.</li>
+              <li>Implemented automated versioned release and CI/CD workflows with Kubernetes.</li>
             </ul>
           </article>
         </div>
@@ -109,62 +126,46 @@
       <section class="container section" id="education">
         <h2>Education</h2>
         <div class="edu-list">
-          <div>
-            <h3>Georgia Institute of Technology</h3>
-            <p>M.S., Computer Science (Machine Learning track), 2018 – 2021 (Online)</p>
-          </div>
-          <div>
-            <h3>Yale University</h3>
-            <p>Ph.D., Biophysics / Cell Biology, 2012 – 2018 · New Haven, CT</p>
-          </div>
-          <div>
-            <h3>Peking University</h3>
-            <p>B.S., Life Sciences, 2008 – 2012 · Beijing, China</p>
-          </div>
+          <div><h3>Georgia Institute of Technology</h3><p>M.S., Computer Science (Machine Learning), 2018 – 2021</p></div>
+          <div><h3>Yale University</h3><p>Ph.D., Biophysics / Cell Biology, May 2018</p></div>
+          <div><h3>Peking University</h3><p>B.S., Life Sciences, Jul 2012</p></div>
         </div>
       </section>
 
-      <section class="container section" id="projects">
-        <h2>Selected Technical Projects</h2>
-        <p class="lead">A few current implementation-focused projects. Full list and details are on the resume page.</p>
+      <section class="container section" id="writing">
+        <h2>Writing</h2>
         <div class="cards">
           <article class="card">
-            <h3><a href="https://github.com/JunyiJ/Practical-Decoder" target="_blank" rel="noopener noreferrer">Practical-Decoder</a></h3>
-            <p class="meta">Python · updated March 2026</p>
-            <p>Decoder-style transformer implementation and architecture experiments.</p>
-          </article>
-
-          <article class="card">
-            <h3><a href="https://github.com/JunyiJ/Practical-DiT" target="_blank" rel="noopener noreferrer">Practical-DiT</a></h3>
-            <p class="meta">Python · updated March 2026</p>
-            <p>Diffusion Transformer implementation practice and systems exploration.</p>
-          </article>
-
-          <article class="card">
-            <h3><a href="https://github.com/JunyiJ/PostTraining-LLM-Small" target="_blank" rel="noopener noreferrer">PostTraining-LLM-Small</a></h3>
-            <p class="meta">Python · updated January 2026</p>
-            <p>Implementation and tuning of GRPO/PPO/DPO methods for practical LLM post-training workflows.</p>
+            <h3>Notes on GenAI Engineering (Coming Soon)</h3>
+            <ul>
+              <li>Practical Notes on Transformer Implementation</li>
+              <li>Lessons from Cold-Start Recommendation in Production</li>
+            </ul>
           </article>
         </div>
-        <p><a href="./resume/">See full project list on resume →</a></p>
       </section>
 
-      <section class="container section" id="blogs">
-        <h2>Tech Blogs</h2>
-        <div class="cards">
-          <article class="card">
-            <h3><a href="https://sites.google.com/d/1XJLsltPvCHfdQHjRRKYePd9owxac5i_i/p/1pXk5-gFpBXShx_ZFDz6-olN_y15zf_oe/edit" target="_blank" rel="noopener noreferrer">Legacy Google Sites Blog</a></h3>
-            <p class="meta">Archive / prior writing</p>
-            <p>Technical writing and notes from the previous website.</p>
-          </article>
-        </div>
+      <section class="container section" id="resume">
+        <h2>Resume</h2>
+        <p>
+          <a href="./resume/">View web resume</a> ·
+          <a href="./assets/resume/Junyi_Jiao_Resume.pdf">Download PDF</a>
+        </p>
+      </section>
+
+      <section class="container section" id="contact">
+        <h2>Contact</h2>
+        <p>
+          <a href="mailto:jiaojunyi90@gmail.com">jiaojunyi90@gmail.com</a> ·
+          <a href="https://www.linkedin.com/in/junyi-jiao-7969962a/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+          <a href="https://github.com/JunyiJ" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
         <p>© <span id="year"></span> Junyi Jiao</p>
-        <p><a href="mailto:jiaojunyi90@gmail.com">jiaojunyi90@gmail.com</a></p>
       </div>
     </footer>
 
