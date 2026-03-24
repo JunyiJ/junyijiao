@@ -6,7 +6,13 @@
     if (theme === 'dark') root.setAttribute('data-theme', 'dark');
     else root.removeAttribute('data-theme');
     const btn = document.querySelector('.theme-toggle');
-    if (btn) btn.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    if (btn) {
+      const dark = theme === 'dark';
+      btn.textContent = dark ? '☀️ Light' : '🌙 Dark';
+      btn.dataset.icon = dark ? '☀️' : '🌙';
+      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
   }
 
   const saved = localStorage.getItem(KEY);
