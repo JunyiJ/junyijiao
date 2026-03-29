@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live README — Junyi Jiao</title>
+    <meta name="description" content="Render GitHub README content live from a repository." />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      .readme-wrap { margin-top: 1rem; }
+      .readme-body {
+        background: linear-gradient(180deg, var(--surface) 0%, var(--surface-soft) 100%);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1.15rem 1.2rem;
+        box-shadow: var(--shadow-sm);
+      }
+      .readme-body img { max-width: 100%; height: auto; }
+      .readme-body pre {
+        overflow-x: auto;
+        padding: .75rem;
+        border: 1px solid var(--border);
+        border-radius: .6rem;
+        background: color-mix(in srgb, var(--surface) 80%, #000 20%);
+      }
+      .readme-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: .92em;
+      }
+      .readme-body blockquote {
+        margin: .6rem 0;
+        padding: .5rem .8rem;
+        border-left: 3px solid var(--primary);
+        color: var(--muted);
+      }
+      .status { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="../">Junyi Jiao</a>
+        <nav>
+          <a href="../">Home</a>
+          <a href="../resume/">Resume</a>
+          <a href="../projects/">Projects</a>
+          <a href="../writing/">Writing</a>
+          <a href="../apps/">Builds</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">🌙 Dark</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h1 id="page-title">Live README</h1>
+      <p class="lead" id="page-subtitle">Loading…</p>
+
+      <section class="section readme-wrap">
+        <div class="readme-body" id="readme-content">
+          <p class="status">Fetching README content from GitHub…</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const owner = params.get('owner') || 'JunyiJ';
+        const repo = params.get('repo') || 'Practical-Decoder';
+        const ref = params.get('ref') || 'main';
+        const path = params.get('path') || 'README.md';
+        const customTitle = params.get('title');
+
+        const safePath = path.replace(/^\/+/, '');
+        const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${safePath}`;
+        const blobUrl = `https://github.com/${owner}/${repo}/blob/${ref}/${safePath}`;
+
+        const titleEl = document.getElementById('page-title');
+        const subtitleEl = document.getElementById('page-subtitle');
+        const contentEl = document.getElementById('readme-content');
+
+        titleEl.textContent = customTitle || `${repo} README`;
+        subtitleEl.innerHTML = `Live from <a href="${blobUrl}" target="_blank" rel="noopener noreferrer">${owner}/${repo}</a> · updates on GitHub reflect here automatically.`;
+
+        marked.setOptions({
+          mangle: false,
+          headerIds: true,
+          breaks: false
+        });
+
+        fetch(rawUrl, { cache: 'no-store' })
+          .then((r) => {
+            if (!r.ok) throw new Error(`GitHub returned ${r.status}`);
+            return r.text();
+          })
+          .then((md) => {
+            const baseRaw = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/`;
+            const baseBlob = `https://github.com/${owner}/${repo}/blob/${ref}/`;
+
+            // Rewrite relative links and image paths to absolute GitHub URLs.
+            const rewritten = md
+              .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (m, alt, url) => {
+                if (/^(https?:|data:|#)/i.test(url)) return m;
+                const clean = url.replace(/^\.\//, '');
+                return `![${alt}](${baseRaw}${clean})`;
+              })
+              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, text, url) => {
+                if (/^(https?:|mailto:|#)/i.test(url)) return m;
+                const clean = url.replace(/^\.\//, '');
+                return `[${text}](${baseBlob}${clean})`;
+              });
+
+            const html = marked.parse(rewritten);
+            contentEl.innerHTML = DOMPurify.sanitize(html);
+          })
+          .catch((err) => {
+            contentEl.innerHTML = `<p><strong>Could not load README.</strong></p><p class="status">${err.message}</p><p><a href="${blobUrl}" target="_blank" rel="noopener noreferrer">Open on GitHub</a></p>`;
+          });
+      })();
+    </script>
+    <script src="../theme.js"></script>
+  </body>
+</html>
